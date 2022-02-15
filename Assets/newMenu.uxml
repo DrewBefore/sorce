@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/styles.uss?fileID=7433441132597879392&amp;guid=da17615f5977db74c8d6479f366484d5&amp;type=3#styles" />
+    <ui:VisualElement style="width: 100%; height: 100%; align-items: center; justify-content: center;">
+        <ui:VisualElement name="MainMenu" style="height: 608px; background-color: rgb(255, 255, 255); width: 456px; justify-content: center; align-items: center; position: relative; top: auto; left: auto; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-image: none; -unity-background-image-tint-color: rgb(0, 142, 7);">
+            <ui:Label text="Sorce" display-tooltip-when-elided="true" style="-unity-text-align: lower-left; position: absolute; top: 20px; -unity-font-style: bold; font-size: 32px;" />
+            <ui:GroupBox style="width: 75%;">
+                <ui:Button text="Custom Lobby" display-tooltip-when-elided="true" name="lobbyButton" class="menuButton" style="-unity-text-align: middle-center; padding-left: 25px; padding-right: 25px; padding-top: 15px; padding-bottom: 15px;" />
+                <ui:Button text="Matchmaking" display-tooltip-when-elided="true" name="matchmakingButton" class="menuButton" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; -unity-text-align: middle-center; padding-left: 25px; padding-right: 25px; padding-top: 15px; padding-bottom: 15px;" />
+                <ui:Button text="Local" display-tooltip-when-elided="true" name="localButton" class="menuButton" style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; -unity-text-align: middle-center; padding-left: 25px; padding-right: 25px; padding-top: 15px; padding-bottom: 15px;" />
+            </ui:GroupBox>
+        </ui:VisualElement>
+        <ui:VisualElement name="LoadingScreen" style="height: 608px; background-color: rgb(255, 255, 255); width: 456px; justify-content: center; align-items: center; position: relative; top: auto; left: auto; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-image: none; -unity-background-image-tint-color: rgb(0, 142, 7); display: none;">
+            <ui:Label text="Sorce" display-tooltip-when-elided="true" style="-unity-text-align: lower-left; position: absolute; top: 20px; -unity-font-style: bold; font-size: 32px;" />
+            <ui:Label text="Loading..." display-tooltip-when-elided="true" name="Loading" />
+        </ui:VisualElement>
+        <ui:VisualElement name="LobbyScreen" style="height: 608px; background-color: rgb(255, 255, 255); width: 456px; justify-content: center; align-items: center; position: relative; top: auto; left: auto; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-image: none; -unity-background-image-tint-color: rgb(0, 142, 7); display: none; flex-shrink: 0; flex-direction: column; flex-wrap: nowrap; overflow: visible; visibility: visible; opacity: 1;">
+            <ui:Label text="Sorce" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: lower-left; position: absolute; top: 20px; -unity-font-style: bold; font-size: 32px;" />
+            <ui:Label text="Lobby Room" display-tooltip-when-elided="true" name="Loading" />
+            <ui:GroupBox style="width: 75%; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center;">
+                <ui:TextField picking-mode="Ignore" text="Character name" style="flex-basis: auto; width: 45%; justify-content: center; align-items: auto;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="width: 75%; flex-direction: row; flex-wrap: nowrap;">
+                <ui:TextField picking-mode="Ignore" text="Game name" style="flex-basis: 50%; width: 45%; justify-content: space-between; align-items: center;" />
+                <ui:Button text="Create game" display-tooltip-when-elided="true" class="menuButton" style="flex-basis: auto; flex-direction: row; width: auto; -unity-text-align: middle-center; white-space: nowrap; flex-grow: 1;" />
+            </ui:GroupBox>
+            <ui:GroupBox style="width: 75%; flex-direction: row; flex-wrap: nowrap;">
+                <ui:TextField picking-mode="Ignore" text="Join Game" style="flex-basis: 50%; width: 45%; align-items: center; flex-direction: row;" />
+                <ui:Button text="Join game" display-tooltip-when-elided="true" class="menuButton" style="flex-basis: auto; flex-direction: row; width: auto; -unity-text-align: middle-center; flex-grow: 1;" />
+            </ui:GroupBox>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
