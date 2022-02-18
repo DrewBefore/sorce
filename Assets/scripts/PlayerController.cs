@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour {
     private bool isAlive = true;
 
     [SerializeField] Spell attack1;
+    [SerializeField] Spell attack2;
+    [SerializeField] Spell attack3;
+    [SerializeField] Spell attack4;
 
 
     void Start() {
@@ -93,7 +96,8 @@ public class PlayerController : MonoBehaviour {
     private void Fire(Spell attack) {
         if (view.IsMine) {
             Vector3 spawn = transform.position + transform.forward * 1.25f + transform.up * .5f;
-            var newProjectile = PhotonNetwork.Instantiate(attack.name, spawn, transform.rotation, 0).GetComponent<Spell>();
+            Debug.Log(transform.rotation);
+            var newProjectile = PhotonNetwork.Instantiate("Spells/" + attack.name, spawn, transform.rotation, 0).GetComponent<Spell>();
         }
     }
 
@@ -108,25 +112,38 @@ public class PlayerController : MonoBehaviour {
 
     private void OnSouth() {
         // StartCoroutine(stopMovement(.5f, "Attacking", attack1));
-        if (i_movement != Vector2.zero) {
-            StartCoroutine(Dash());
+        if (view.IsMine) {
+            anim.Play("Attack2");
+            Fire(attack1);
+            // StartCoroutine(stopMovement(.5f, "LevitateStart", scourge));
         }
+        // if (i_movement != Vector2.zero) {
+        //     StartCoroutine(Dash());
+        // }
         Debug.Log("South");
     }
 
     private void OnEast() {
         if (view.IsMine) {
             anim.Play("Attack2");
-            Fire(attack1);
+            Fire(attack3);
             // StartCoroutine(stopMovement(.5f, "LevitateStart", scourge));
         }
     }
     private void OnWest() {
-        Debug.Log("West");
+        if (view.IsMine) {
+            anim.Play("Attack2");
+            Fire(attack2);
+            // StartCoroutine(stopMovement(.5f, "LevitateStart", scourge));
+        }
         // StartCoroutine(stopMovement(.5f, "Attacking", attack2));
     }
     private void OnNorth() {
-        Debug.Log("North");
+        if (view.IsMine) {
+            anim.Play("LevitateStart");
+            Fire(attack4);
+            // StartCoroutine(stopMovement(.5f, "LevitateStart", scourge));
+        }
         // StartCoroutine(stopMovement(.5f, "Attacking", attack3));
     }
 

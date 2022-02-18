@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using Photon.Pun;
 namespace PolygonArsenal
 {
     public class PolygonProjectileScript : MonoBehaviour
@@ -16,11 +16,11 @@ namespace PolygonArsenal
 
         void Start()
         {
-            projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
+            projectileParticle = PhotonNetwork.Instantiate(projectileParticle.name, transform.position, transform.rotation) as GameObject;
             projectileParticle.transform.parent = transform;
             if (muzzleParticle)
             {
-                muzzleParticle = Instantiate(muzzleParticle, transform.position, transform.rotation) as GameObject;
+                muzzleParticle = PhotonNetwork.Instantiate(muzzleParticle.name, transform.position, transform.rotation) as GameObject;
                 Destroy(muzzleParticle, 1.5f); // Lifetime of muzzle effect.
             }
         }
